@@ -21,6 +21,12 @@
 		4DB5190D27D6C46B005A9E09 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5190C27D6C46B005A9E09 /* ProfileView.swift */; };
 		4DB5190F27D6C4DA005A9E09 /* UploadPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5190E27D6C4DA005A9E09 /* UploadPostView.swift */; };
 		4DB5191127D6C819005A9E09 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5191027D6C819005A9E09 /* FeedCell.swift */; };
+		4DCED98827DC83B900DE9A26 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCED98727DC83B900DE9A26 /* ImagePicker.swift */; };
+		4DCED98A27DC8E7E00DE9A26 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCED98927DC8E7E00DE9A26 /* LoginView.swift */; };
+		4DCED98C27DC8EAF00DE9A26 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCED98B27DC8EAF00DE9A26 /* RegistrationView.swift */; };
+		4DCED98E27DC8EC900DE9A26 /* ReserPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCED98D27DC8EC900DE9A26 /* ReserPasswordView.swift */; };
+		4DCED99027DC935700DE9A26 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCED98F27DC935700DE9A26 /* CustomTextField.swift */; };
+		4DCED99227DC937400DE9A26 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCED99127DC937400DE9A26 /* CustomSecureField.swift */; };
 		4DF0614F27DC168600C8DA7B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF0614E27DC168600C8DA7B /* SearchBar.swift */; };
 		4DF0615127DC188100C8DA7B /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF0615027DC188100C8DA7B /* PostGridView.swift */; };
 		4DF0615327DC1B4200C8DA7B /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF0615227DC1B4200C8DA7B /* UserCell.swift */; };
@@ -30,6 +36,7 @@
 		4DF0615B27DC2AA700C8DA7B /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF0615A27DC2AA700C8DA7B /* ProfileHeaderView.swift */; };
 		4DF0615D27DC2F0200C8DA7B /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF0615C27DC2F0100C8DA7B /* UserStatView.swift */; };
 		4DF0615F27DC30BA00C8DA7B /* ProfileActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF0615E27DC30BA00C8DA7B /* ProfileActionButtonView.swift */; };
+		4DF0616127DC359E00C8DA7B /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DF0616027DC359E00C8DA7B /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +55,12 @@
 		4DB5190C27D6C46B005A9E09 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4DB5190E27D6C4DA005A9E09 /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
 		4DB5191027D6C819005A9E09 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		4DCED98727DC83B900DE9A26 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		4DCED98927DC8E7E00DE9A26 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4DCED98B27DC8EAF00DE9A26 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		4DCED98D27DC8EC900DE9A26 /* ReserPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserPasswordView.swift; sourceTree = "<group>"; };
+		4DCED98F27DC935700DE9A26 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		4DCED99127DC937400DE9A26 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		4DF0614E27DC168600C8DA7B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		4DF0615027DC188100C8DA7B /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
 		4DF0615227DC1B4200C8DA7B /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -57,6 +70,7 @@
 		4DF0615A27DC2AA700C8DA7B /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		4DF0615C27DC2F0100C8DA7B /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		4DF0615E27DC30BA00C8DA7B /* ProfileActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButtonView.swift; sourceTree = "<group>"; };
+		4DF0616027DC359E00C8DA7B /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +87,7 @@
 		4DB518D027D6C190005A9E09 = {
 			isa = PBXGroup;
 			children = (
+				4DF0616027DC359E00C8DA7B /* readme.md */,
 				4DB518DB27D6C190005A9E09 /* InstagramSwiftUI */,
 				4DB518DA27D6C190005A9E09 /* Products */,
 			);
@@ -156,6 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				4DF0615627DC210000C8DA7B /* Extensions.swift */,
+				4DCED98727DC83B900DE9A26 /* ImagePicker.swift */,
+				4DCED98F27DC935700DE9A26 /* CustomTextField.swift */,
+				4DCED99127DC937400DE9A26 /* CustomSecureField.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -217,6 +235,9 @@
 		4DB518FD27D6C31B005A9E09 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				4DCED98927DC8E7E00DE9A26 /* LoginView.swift */,
+				4DCED98B27DC8EAF00DE9A26 /* RegistrationView.swift */,
+				4DCED98D27DC8EC900DE9A26 /* ReserPasswordView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -327,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DB518E427D6C191005A9E09 /* Preview Assets.xcassets in Resources */,
+				4DF0616127DC359E00C8DA7B /* readme.md in Resources */,
 				4DB518E127D6C191005A9E09 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,19 +360,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCED99027DC935700DE9A26 /* CustomTextField.swift in Sources */,
 				4DF0614F27DC168600C8DA7B /* SearchBar.swift in Sources */,
 				4DB5190627D6C410005A9E09 /* FeedView.swift in Sources */,
 				4DF0615F27DC30BA00C8DA7B /* ProfileActionButtonView.swift in Sources */,
 				4DB518E627D6C191005A9E09 /* Persistence.swift in Sources */,
+				4DCED98A27DC8E7E00DE9A26 /* LoginView.swift in Sources */,
 				4DF0615527DC1B4C00C8DA7B /* UserListView.swift in Sources */,
 				4DB5190D27D6C46B005A9E09 /* ProfileView.swift in Sources */,
+				4DCED99227DC937400DE9A26 /* CustomSecureField.swift in Sources */,
 				4DF0615127DC188100C8DA7B /* PostGridView.swift in Sources */,
+				4DCED98827DC83B900DE9A26 /* ImagePicker.swift in Sources */,
 				4DB5190F27D6C4DA005A9E09 /* UploadPostView.swift in Sources */,
 				4DB518F727D6C2D9005A9E09 /* ContentView.swift in Sources */,
 				4DB5191127D6C819005A9E09 /* FeedCell.swift in Sources */,
+				4DCED98E27DC8EC900DE9A26 /* ReserPasswordView.swift in Sources */,
 				4DF0615327DC1B4200C8DA7B /* UserCell.swift in Sources */,
 				4DF0615B27DC2AA700C8DA7B /* ProfileHeaderView.swift in Sources */,
 				4DF0615927DC25FC00C8DA7B /* NotificationCell.swift in Sources */,
+				4DCED98C27DC8EAF00DE9A26 /* RegistrationView.swift in Sources */,
 				4DB518DF27D6C190005A9E09 /* ContentView_pre.swift in Sources */,
 				4DB5190827D6C435005A9E09 /* SearchView.swift in Sources */,
 				4DB518E927D6C191005A9E09 /* InstagramSwiftUI.xcdatamodeld in Sources */,
