@@ -18,10 +18,13 @@ struct FeedCell: View {
                     .frame(width: 36, height: 36)
                     .clipped()
                     .cornerRadius(18)
+                    
                 
                 Text("Shoya")
                     .font(.system(size: 14, weight: .semibold))
             }
+            .padding([.leading, .bottom], 8)
+            
             
             //MARK: - post name
             HStack {
@@ -30,6 +33,7 @@ struct FeedCell: View {
                     .scaledToFit()
                     .frame(height: 440)
                     .clipped()
+                    .background(.primary)
             }
             
             //MARK: - action button
@@ -40,7 +44,7 @@ struct FeedCell: View {
                     Image(systemName: "heart")
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 28, height: 28)
+                        .frame(width: 20, height: 20)
                         .font(.system(size:20))
                         .clipped()
                         .padding(4)
@@ -52,7 +56,7 @@ struct FeedCell: View {
                     Image(systemName: "bubble.right")
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 28, height: 28)
+                        .frame(width: 20, height: 20)
                         .font(.system(size:20))
                         .clipped()
                         .padding(4)
@@ -64,27 +68,35 @@ struct FeedCell: View {
                     Image(systemName: "paperplane")
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 28, height: 28)
+                        .frame(width: 20, height: 20)
                         .font(.system(size:20))
                         .clipped()
                         .padding(4)
                 }
             }
+            .padding(.leading, 4)
             .foregroundColor(.black)
             
             
             //MARK: - caption
+            Text("3 likes")
+                .font(.system(size: 14 , weight: .semibold))
+                .padding(.leading, 8)
+                .padding(.bottom, 2)
             
             HStack {
                 Text("MapNote").font(.system(size: 14, weight: .semibold)) +
                 Text(" This App is a note which hav your awesome memory. It's consist of map and note. ")
                     .font(.system(size: 15))
             }
+            .padding(.horizontal, 8)
             
             Text("2d")
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
-                .padding(.top)
+//                .padding([.leading, .top], 8)
+                .padding(.leading, 8)
+                .padding(.top,2)
         }
     }
 }

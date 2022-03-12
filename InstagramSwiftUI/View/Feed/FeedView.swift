@@ -1,5 +1,5 @@
 //
-//  NotificationView.swift
+//  FeedView.swift
 //  InstagramSwiftUI
 //
 //  Created by 中出翔也 on 2022/03/08.
@@ -7,21 +7,20 @@
 
 import SwiftUI
 
-struct NotificationView: View {
+struct FeedView: View {
     var body: some View {
         ScrollView {
-            LazyVStack {
+            LazyVStack(spacing: 32) {
                 ForEach(0 ..< 20) { _ in
-                    NotificationCell()
-                        .padding(.top)
+                    FeedCell()
                 }
-            }
+            }.padding(.top)
         }
     }
 }
 
-struct NotificationView_Previews: PreviewProvider {
+struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationView()
+        FeedView()
     }
 }
