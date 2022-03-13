@@ -10,11 +10,13 @@ import Firebase
 
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User? // firsvieの切り分けのためオプショナル型
+    @Published var currentUser: User?
     
     static let shared = AuthViewModel()
     
     init() {
         userSession = Auth.auth().currentUser //firebaseからuserがあるか探す
+        fetchUser()
     }
     
     func login(withEmail email: String, password: String) {
@@ -25,6 +27,8 @@ class AuthViewModel: ObservableObject {
             }
             guard let user = result?.user else { return }
             self.userSession = user
+            self.fetchUser()
+            
         }
     }
     
@@ -46,9 +50,10 @@ class AuthViewModel: ObservableObject {
                             "fullname": fullname,
                             "profileImageUrl": imageUrl,
                             "uid": user.uid]
-                Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
+                COLLECTION_USERS.document(user.uid).setData(data) { _ in
                     print("successfully upload user data")
                     self.userSession = user
+                    self.fetchUser()
                 }
             }
             
@@ -66,6 +71,18 @@ class AuthViewModel: ObservableObject {
     }
     
     func fetchUser() {
-        
+        guard let uid = userSession?.uid else { return }
+        COLLECTION_USERS.document(uid).getDocument { snapshot, _ in
+            
+            //--------- ここからはあまり良くない読み込み方法 -----------------
+            //            guard let dictionary = snapshot?.data() else { return }
+            //            guard let username = dictionary["username"] as? String else { return } //この読み込みはコードが多くなるため、プロトコルを使う
+            //            let user = User(username: username, email: <#T##String#>, profileImageUrl: <#T##String#>, fullname: <#T##String#>, uid: <#T##String#>)
+            //            print("\(username)")
+            //-------------- ここまで -----------------------------------
+            
+            guard let user = try? snapshot?.data(as: User.self) else { return }
+            self.currentUser = user
+        }
     }
 }
