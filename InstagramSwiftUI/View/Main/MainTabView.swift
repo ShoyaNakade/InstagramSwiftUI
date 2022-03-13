@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
+    
     var body: some View {
         NavigationView {
             TabView {
@@ -38,8 +39,20 @@ struct MainTabView: View {
             }
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(leading: logoutButton)
             .accentColor(.black)
         }
+    }
+    
+    var logoutButton: some View {
+        Button {
+            AuthViewModel.shared.signout() // environmentを使わず直接アクセスしたいから。sharedはstaticだからそのままインスタンスを生成せずに使える。
+            
+        } label: {
+            Text("ログアウト")
+                .foregroundColor(.black)
+        }
+
     }
 }
 

@@ -6,16 +6,23 @@
 //
 
 import SwiftUI
+import Firebase
+
 
 @main
 struct InstagramSwiftUIApp: App {
     let persistenceController = PersistenceController.shared
 
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            LoginView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView()
+                .environmentObject(AuthViewModel.shared)
+//            LoginView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

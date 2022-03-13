@@ -1,9 +1,9 @@
 # InstagramSwiftUI（インスタグラムのクローン）
 インスタグラムのクローンを作成する。
-MVVMの構成や、Notificationについの基礎を学無ことができる。
+MVVMの構成や、Notificationについの基礎を学ぶことができる。
  
 # DEMO
-海外の動画コースを参照しアレンジを加えた。
+海外の動画コース(有料)を参照しアレンジを加えた。
 https://www.udemy.com/course/instagram-swiftui-clone-mvvm-cloud-firestore/
 
 
@@ -30,9 +30,8 @@ pip install huga_package
  
 作成情報を列挙する
  
-* Shoya Nakade
-* gritup
-* 
+* 名前: Shoya Nakade
+* 所属: gritup
  
 # License
 
