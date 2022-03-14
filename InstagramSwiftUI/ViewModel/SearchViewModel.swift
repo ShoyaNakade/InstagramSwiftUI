@@ -9,7 +9,7 @@ import SwiftUI
 
 class SearchViewModel: ObservableObject {
     @Published var users = [User]()
-    
+
     init() {
         fetchUsers()
     }

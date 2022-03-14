@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct FeedCell: View {
+    let post: Post
+    
     var body: some View {
         VStack(alignment: .leading) {
             //MARK: - user info
             HStack {
-                Image("mapnote")
+                KFImage(URL(string: post.ownerImageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 36, height: 36)
@@ -28,7 +31,7 @@ struct FeedCell: View {
             
             //MARK: - post name
             HStack {
-                Image("mapnote")
+                KFImage(URL(string: post.imageUrl))
                     .resizable()
                     .scaledToFit()
                     .frame(height: 440)
@@ -79,14 +82,14 @@ struct FeedCell: View {
             
             
             //MARK: - caption
-            Text("3 likes")
+            Text("\(post.like) いいね")
                 .font(.system(size: 14 , weight: .semibold))
                 .padding(.leading, 8)
                 .padding(.bottom, 2)
             
             HStack {
-                Text("MapNote").font(.system(size: 14, weight: .semibold)) +
-                Text(" This App is a note which hav your awesome memory. It's consist of map and note. ")
+                Text("\(post.ownerUsername)").font(.system(size: 14, weight: .semibold)) +
+                Text(" \(post.caption)")
                     .font(.system(size: 15))
             }
             .padding(.horizontal, 8)
@@ -101,8 +104,8 @@ struct FeedCell: View {
     }
 }
 
-struct FeedCell_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedCell()
-    }
-}
+//struct FeedCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FeedCell()
+//    }
+//}

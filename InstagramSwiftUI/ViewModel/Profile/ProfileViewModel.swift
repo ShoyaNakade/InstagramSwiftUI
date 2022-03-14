@@ -30,7 +30,12 @@ class ProfileViewModel: ObservableObject {
     }
     
     func checkIfuserIsFollowed() {
+        guard let uid = user.id else { return }
+        guard !user.isCurrentUser else { return }
         
+        UserService.checkIfUserIsFollowed(uid: uid) { isFollowed in
+            self.user.isFollowed = isFollowed
+        }
     }
     
 }
