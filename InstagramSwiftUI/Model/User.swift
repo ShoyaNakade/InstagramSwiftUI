@@ -14,6 +14,7 @@ struct User:Identifiable, Decodable {
     let fullname: String
 //    let uid: String
     @DocumentID var id: String? // firestoreのIDも取得可能。そのためuidは必要ない
+    var isFollowed: Bool? = false // firestoreに保存する必要はないため、オプショナル
     var isCurrentUser: Bool { return AuthViewModel.shared.userSession?.uid == id }
     
 }
