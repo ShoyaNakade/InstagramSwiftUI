@@ -60,8 +60,8 @@ struct FeedCell: View {
                         .padding(4)
                 }
                 
-                Button {
-                    //
+                NavigationLink {
+                    CommentsView()
                 } label: {
                     Image(systemName: "bubble.right")
                         .resizable()
