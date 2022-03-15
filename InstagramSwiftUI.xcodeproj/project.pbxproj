@@ -10,6 +10,7 @@
 		4D0DA52327DFF10800CDA975 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DA52227DFF10800CDA975 /* Post.swift */; };
 		4D0DA52527DFF23600CDA975 /* FeedVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DA52427DFF23600CDA975 /* FeedVIewModel.swift */; };
 		4D0DA52727DFFC4E00CDA975 /* PostGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DA52627DFFC4E00CDA975 /* PostGridViewModel.swift */; };
+		4D334CA727E0A22200B15600 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D334CA627E0A22200B15600 /* FeedCellViewModel.swift */; };
 		4D94026C27DD548F0067ED20 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4D94026B27DD548F0067ED20 /* FirebaseAuth */; };
 		4D94026E27DD548F0067ED20 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4D94026D27DD548F0067ED20 /* FirebaseFirestore */; };
 		4D94027027DD548F0067ED20 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 4D94026F27DD548F0067ED20 /* FirebaseFunctions */; };
@@ -61,6 +62,7 @@
 		4D0DA52227DFF10800CDA975 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4D0DA52427DFF23600CDA975 /* FeedVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVIewModel.swift; sourceTree = "<group>"; };
 		4D0DA52627DFFC4E00CDA975 /* PostGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridViewModel.swift; sourceTree = "<group>"; };
+		4D334CA627E0A22200B15600 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
 		4D94027827DD59C30067ED20 /* AuthVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVIewModel.swift; sourceTree = "<group>"; };
 		4D94027A27DD66C40067ED20 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		4DA64C2B27DDC56700AD5B5D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 		4DB518FF27D6C34E005A9E09 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				4D334CA627E0A22200B15600 /* FeedCellViewModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				4DF0615B27DC2AA700C8DA7B /* ProfileHeaderView.swift in Sources */,
 				4DF0615927DC25FC00C8DA7B /* NotificationCell.swift in Sources */,
 				4DCED98C27DC8EAF00DE9A26 /* RegistrationView.swift in Sources */,
+				4D334CA727E0A22200B15600 /* FeedCellViewModel.swift in Sources */,
 				4DB518DF27D6C190005A9E09 /* ContentView_pre.swift in Sources */,
 				4DB5190827D6C435005A9E09 /* SearchView.swift in Sources */,
 				4DB518E927D6C191005A9E09 /* InstagramSwiftUI.xcdatamodeld in Sources */,
