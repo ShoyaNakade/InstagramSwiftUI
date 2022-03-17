@@ -12,6 +12,7 @@ struct UploadPostView: View {
     @State var postImage: Image?
     @State var captionText =  ""
     @State var imagePickerPresented = false
+    @ObservedObject var viewModel = UploadPostViewModel()
     
     var body: some View {
         VStack {
@@ -49,7 +50,9 @@ struct UploadPostView: View {
                 
                 
                 Button {
-                    // action
+                    if let image = selectedImage {
+                        viewModel.uploadPost(caption: captionText, image: image)
+                    }
                 } label: {
                     Text("シェア")
                         .font(.system(size: 16,

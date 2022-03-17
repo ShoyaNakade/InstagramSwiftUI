@@ -47,6 +47,8 @@ class FeedCellViewModel: ObservableObject {
                 COLLECTION_USERS.document(uid).collection("user-likes").document(postId).delete { _ in
                     COLLECTION_POSTS.document(postId).updateData(["likes": self.post.likes - 1])
                     
+                    NotificationsViewModel.uploadNotification(toUid: self.post.ownerUid, type: .like, post: self.post)
+                    
                     self.post.didLike = false
                     self.post.likes -= 1
                 }

@@ -25,15 +25,17 @@ class CommentViewModel: ObservableObject {
                                     "profileImageUrl": user.profileImageUrl,
                                     "uid": user.id ?? "",
                                     "timestamp": Timestamp(date: Date()),
-                                   "postOwnerUid": post.ownerUId,
+                                   "postOwnerUid": post.ownerUid,
                                     "commentText": commentText]
         COLLECTION_POSTS.document(postId).collection("post-comments").addDocument(data: data) { error in
             if let error = error {
                 print("Debug: Error uploading comment \(error.localizedDescription)")
                 return
             }
+            
+            NotificationsViewModel.uploadNotification(toUid: self.post.ownerUid,
+                                                      type: .comment, post: self.post)
         }
-        // colection
     }
     
     func fetchComments() {
