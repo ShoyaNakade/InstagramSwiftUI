@@ -11,6 +11,7 @@ import Kingfisher
 struct FeedCell: View {
     @ObservedObject var viewModel: FeedCellViewModel
     
+    
     var didLike: Bool { return viewModel.post.didLike ?? false }
     
     init(viewModel: FeedCellViewModel) {
@@ -27,9 +28,8 @@ struct FeedCell: View {
                     .frame(width: 36, height: 36)
                     .clipped()
                     .cornerRadius(18)
-                    
                 
-                Text("Shoya")
+                Text(viewModel.post.ownerUsername)
                     .font(.system(size: 14, weight: .semibold))
             }
             .padding([.leading, .bottom], 8)

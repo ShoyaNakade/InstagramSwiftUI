@@ -10,6 +10,7 @@ import SwiftUI
 
 class FeedCellViewModel: ObservableObject {
     @Published var post: Post
+    
     var likeString: String {
         let label = post.likes == 1 ? "like" : "likes"
         return "\(post.likes) \(label)"

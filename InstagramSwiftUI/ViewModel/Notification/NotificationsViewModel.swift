@@ -11,7 +11,24 @@ import Firebase
 class NotificationsViewModel: ObservableObject {
     @Published var notifications = [Notification]()
     
-    func fetchNotification() {
+    init() {
+        fetchNotifications()
+    }
+    
+    func fetchNotifications() {
+        guard let uid = AuthViewModel.shared.userSession?.uid else { return }
+        print("Debug: \(uid)")
+        let query = COLLECTION_NOTIFICATIOS.document(uid).collection("user-notifications")
+            .order(by: "timestamp", descending: true)
+        
+        print("Debug: \(query)")
+        query.getDocuments { snapshot, _ in
+            guard let documents = snapshot?.documents else { return }
+            print("Debug: \(documents.count)")
+            self.notifications = documents.compactMap({ try? $0.data(as: Notification.self) })
+            
+            print("debug: \(self.notifications)")
+        }
         
     }
     
@@ -20,7 +37,8 @@ class NotificationsViewModel: ObservableObject {
         guard let user = AuthViewModel.shared.currentUser else { return }
         
         var data: [String: Any] = ["timestamp": Timestamp(date: Date()),
-                                   "username": user.id ?? "",
+                                   "username": user.username,
+                                   "uid": user.id ?? "",
                                    "profileImageUrl": user.profileImageUrl,
                                    "type": type.rawValue, // rawvalueでIntに。firestoreではIntでないとクラッシュする
                                     ]
