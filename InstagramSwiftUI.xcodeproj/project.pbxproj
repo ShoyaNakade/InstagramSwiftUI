@@ -19,6 +19,7 @@
 		4D4C440127E2A90D003B10DE /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C440027E2A90D003B10DE /* Notification.swift */; };
 		4D4C440327E31944003B10DE /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C440227E31944003B10DE /* NotificationsViewModel.swift */; };
 		4D4C440527E32539003B10DE /* UploadPostViwModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C440427E32539003B10DE /* UploadPostViwModel.swift */; };
+		4D75915827E41509009898B3 /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75915727E41509009898B3 /* TextArea.swift */; };
 		4D94026C27DD548F0067ED20 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4D94026B27DD548F0067ED20 /* FirebaseAuth */; };
 		4D94026E27DD548F0067ED20 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4D94026D27DD548F0067ED20 /* FirebaseFirestore */; };
 		4D94027027DD548F0067ED20 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 4D94026F27DD548F0067ED20 /* FirebaseFunctions */; };
@@ -79,6 +80,7 @@
 		4D4C440027E2A90D003B10DE /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		4D4C440227E31944003B10DE /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		4D4C440427E32539003B10DE /* UploadPostViwModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViwModel.swift; sourceTree = "<group>"; };
+		4D75915727E41509009898B3 /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 		4D94027827DD59C30067ED20 /* AuthVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVIewModel.swift; sourceTree = "<group>"; };
 		4D94027A27DD66C40067ED20 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		4DA64C2B27DDC56700AD5B5D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				4DCED98F27DC935700DE9A26 /* CustomTextField.swift */,
 				4DCED99127DC937400DE9A26 /* CustomSecureField.swift */,
 				4DA64C2B27DDC56700AD5B5D /* Constants.swift */,
+				4D75915727E41509009898B3 /* TextArea.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				4D0DA52327DFF10800CDA975 /* Post.swift in Sources */,
 				4DD5D0EF27DF5EE000DEB838 /* ProfileViewModel.swift in Sources */,
 				4D4C43F927E14724003B10DE /* CommentsView.swift in Sources */,
+				4D75915827E41509009898B3 /* TextArea.swift in Sources */,
 				4DA64C3727DDCD0E00AD5B5D /* SearchViewModel.swift in Sources */,
 				4D0DA52527DFF23600CDA975 /* FeedVIewModel.swift in Sources */,
 				4D4C43FF27E1504A003B10DE /* CustomeInputView.swift in Sources */,

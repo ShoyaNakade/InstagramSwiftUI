@@ -12,6 +12,7 @@ struct UploadPostView: View {
     @State var postImage: Image?
     @State var captionText =  ""
     @State var imagePickerPresented = false
+    @Binding var tabIndex: Int
     @ObservedObject var viewModel = UploadPostViewModel()
     
     var body: some View {
@@ -44,26 +45,47 @@ struct UploadPostView: View {
                         .frame(width: 96, height: 96)
                         .clipped()
                     
-                    TextField("キャプションを入力してください",text: $captionText)
+//                    TextField("キャプションを入力してください",text: $captionText)
+                    TextArea(text: $captionText, placeholder: "キャプションを入力してください")
+                        .frame(height: 200)
+                        
                 }
                 .padding()
-                
-                
-                Button {
-                    if let image = selectedImage {
-                        viewModel.uploadPost(caption: captionText, image: image)
+                HStack {
+                    Button {
+                        captionText = ""
+                        postImage = nil
+                    } label: {
+                        Text("キャンセル")
+                            .font(.system(size: 16,
+                                    weight: .semibold))
+                            .frame(width: 172, height:50)
+                            .background(Color.red)
+                            .cornerRadius(5)
+                            .foregroundColor(.white)
                     }
-                } label: {
-                    Text("シェア")
-                        .font(.system(size: 16,
-                                weight: .semibold))
-                        .frame(width: 360, height:50)
-                        .background(Color.blue)
-                        .cornerRadius(5)
-                        .foregroundColor(.white)
+                    
+                    Button {
+                        if let image = selectedImage {
+                            viewModel.uploadPost(caption: captionText, image: image) { _ in
+                                captionText = ""
+                                postImage = nil
+                                tabIndex = 0
+                            }
+                        }
+                    } label: {
+                        Text("シェア")
+                            .font(.system(size: 16,
+                                    weight: .semibold))
+                            .frame(width: 172, height:50)
+                            .background(Color.blue)
+                            .cornerRadius(5)
+                            .foregroundColor(.white)
+                    }
                 }
                 .padding()
             }
+            
             Spacer()
             
         }
@@ -80,8 +102,8 @@ extension UploadPostView {
     }
 }
 
-struct UploadPostView_Previews: PreviewProvider {
-    static var previews: some View {
-        UploadPostView()
-    }
-}
+//struct UploadPostView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        UploadPostView()
+//    }
+//}
