@@ -29,11 +29,14 @@ struct NotificationCell: View {
                             .scaledToFill()
                             .frame(width: 40, height: 40)
                             .clipShape(Circle())
-                        //                .cornerRadius(24)
                         
-                        Text(viewModel.notification.username).font(.system(size: 14, weight: .semibold)) +
+                        Text(viewModel.notification.username)
+                            .font(.system(size: 14, weight: .semibold)) +
                         Text(viewModel.notification.type.notificationMessage)
-                            .font(.system(size: 15))
+                            .font(.system(size: 15)) +
+                        Text(" \(viewModel.timestampString)")
+                            .foregroundColor(.gray).font(.system(size: 12))
+                            
                     }
                 }
             }

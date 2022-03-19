@@ -21,30 +21,29 @@ class PostGridViewModel: ObservableObject {
         self.config = config
         fetchPosts(forConfig: config)
     }
+    
     func fetchPosts(forConfig config: PostGridConfigration) {
         switch config {
-        case .explore: fetchExplorePagePosts()
-            
-        case .profile(let uid): fetchUserPosts(foruId: uid)
+        case .explore:
+            fetchExplorePagePosts()
+        case .profile(let uid):
+            fetchUserPosts(foruId: uid)
             
         }
     }
-    
-    func fetchPosts() {
+        
+    func fetchExplorePagePosts() {
         COLLECTION_POSTS.getDocuments { snapshot, _ in
             guard let documents = snapshot?.documents else { return }
             self.posts = documents.compactMap({ try? $0.data(as: Post.self) })
         }
     }
     
-    func fetchExplorePagePosts() {
-        
-    }
-    
     func fetchUserPosts(foruId uid: String) {
         COLLECTION_POSTS.whereField("ownerUid", isEqualTo: uid).getDocuments { snapshot, _ in
             guard let documents = snapshot?.documents else { return }
-            self.posts = documents.compactMap({ try? $0.data(as: Post.self) })
+            let posts = documents.compactMap({ try? $0.data(as: Post.self) })
+            self.posts = posts.sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() })
         }
     }
 }

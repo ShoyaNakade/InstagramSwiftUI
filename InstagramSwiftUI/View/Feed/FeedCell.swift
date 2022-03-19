@@ -97,11 +97,11 @@ struct FeedCell: View {
             HStack {
                 Text("\(viewModel.post.ownerUsername)").font(.system(size: 14, weight: .semibold)) +
                 Text(" \(viewModel.post.caption)")
-                    .font(.system(size: 15))
+                    .font(.system(size: 14))
             }
             .padding(.horizontal, 8)
             
-            Text("2d")
+            Text(viewModel.timestampString)
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
 //                .padding([.leading, .top], 8)

@@ -19,7 +19,8 @@ struct UserListView: View {
         ScrollView {
             LazyVStack(spacing:10) {
                 ForEach(users) { user in
-                    NavigationLink(destination:ProfileView(user: user)) {
+                    // LazyViewで、navigation遷移が起きた時のみviewを作る。
+                    NavigationLink(destination: LazyView(ProfileView(user: user))) {
                         UserCell(user: user)
                             .padding(.leading)
                     }

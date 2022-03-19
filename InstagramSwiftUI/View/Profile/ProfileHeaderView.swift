@@ -24,9 +24,15 @@ struct ProfileHeaderView: View {
                 Spacer()
                 
                 HStack(spacing: 16) {
-                    UserStatView(value: 1, title: "投稿")
-                    UserStatView(value: 2, title: "フォロワー")
-                    UserStatView(value: 2, title: "フォロー中")
+//                    if let stats = viewModel.user.stats {
+//                        UserStatView(value: stats.posts, title: "投稿")
+//                        UserStatView(value: stats.followers, title: "フォロワー")
+//                        UserStatView(value: stats.following, title: "フォロー中")
+//                    } // この書き方だとfetchで読み込まれるまで表示されない。
+                    UserStatView(value: viewModel.user.stats?.posts ?? 0, title: "投稿")
+                    UserStatView(value: viewModel.user.stats?.followers ?? 0, title: "フォロワー")
+                    UserStatView(value: viewModel.user.stats?.following ?? 0, title: "フォロー中")
+                    
                 }
                 .padding(.trailing, 32)
             }
@@ -34,10 +40,12 @@ struct ProfileHeaderView: View {
             Text(viewModel.user.fullname)
                 .font(.system(size: 15, weight: .semibold))
                 .padding([.leading, .top])
-            Text("思い出をマップ上に残す。\nいきたい場所を思い出の場所へ。")
-                .font(.system(size: 15))
-                .padding(.leading)
-                .padding(.top, 1)
+            if let bio = viewModel.user.bio {
+                Text(bio)
+                    .font(.system(size: 15))
+                    .padding(.leading)
+                    .padding(.top, 1)
+            }
             
             HStack {
                 Spacer()

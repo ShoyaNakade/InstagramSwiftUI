@@ -11,6 +11,7 @@ import Firebase
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User? // firsvieの切り分けのためオプショナル型
     @Published var currentUser: User?
+    @Published var didSendRestPassswordLink = false
     
     static let shared = AuthViewModel()
     
@@ -66,8 +67,15 @@ class AuthViewModel: ObservableObject {
         try? Auth.auth().signOut() // firebase(サーバー側)のログアウト
     }
     
-    func resetPassword(){
-        
+    func resetPassword(withEmail email: String){
+        Auth.auth().sendPasswordReset(withEmail: email) {  error in
+            if let error = error {
+                print("Failed to sen link with error \(error.localizedDescription)")
+                return
+            }
+            self.didSendRestPassswordLink = true
+            print("SuccessFully sent link..")
+        }
     }
     
     func fetchUser() {
