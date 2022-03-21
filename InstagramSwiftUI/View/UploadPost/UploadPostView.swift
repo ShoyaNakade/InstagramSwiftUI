@@ -22,7 +22,7 @@ struct UploadPostView: View {
                     imagePickerPresented.toggle()
                     
                 } label: {
-                    Image("plus_photo")
+                    Image(systemName: "plus.circle")
                         .resizable()
                         .renderingMode(.template)
                         .scaledToFill()

@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct EditProfileView: View {
-    @ObservedObject private var viewModel: EditProfileVIewModel
+    @State private var bioText: String
+    @ObservedObject private var viewModel: EditProfileViewModel
+    @Binding var user: User
     @Environment(\.presentationMode) var mode
-    init(viewModel: EditProfileVIewModel) {
-        self.viewModel = viewModel
+    init(user: Binding<User>) {
+        self._user = user
+        self.viewModel = EditProfileViewModel(user: self._user.wrappedValue) // Bindingをinitで使える。
+        self._bioText = State(initialValue: _user.wrappedValue.bio ?? "" ) // BIndingの値をStateプロパティに入れる例
     }
     
-    @State private var bioText = ""
     var body: some View {
         VStack() {
             HStack {
@@ -38,9 +41,12 @@ struct EditProfileView: View {
                 .padding()
             Spacer()
         }
-//        .onReceive(viewModel.$uploadComplete) { _ in
-//            self.mode.wrappedValue.dismiss()
-//        }
+        .onReceive(viewModel.$uploadComplete) { completed in
+            if completed { //急に消えるバグを防ぐ
+                self.mode.wrappedValue.dismiss()
+                self.user.bio = viewModel.user.bio
+            }
+        }
     }
 }
 
